@@ -1030,3 +1030,292 @@
     </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Odisha Scholarships & Colleges Portal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* General Page Style */
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f5f9;
+      color: #222;
+      scroll-behavior: smooth;
+    }
+    header {
+      background-color: #0077b6;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.8em;
+      font-weight: bold;
+    }
+    nav {
+      background-color: #023e8a;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+      display: block;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background-color: #0077b6;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+      url('https://picsum.photos/seed/education/1200/400.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .hero h1 {
+      font-size: 2.8em;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2em;
+    }
+
+    /* Search Bar */
+    .search-bar {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .search-bar input {
+      padding: 10px;
+      width: 60%;
+      max-width: 400px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+
+    /* Scholarship Section */
+    .section {
+      padding: 50px 20px;
+    }
+    .section h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #023e8a;
+    }
+    .filter-buttons {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .filter-buttons button {
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .filter-buttons button.active, .filter-buttons button:hover {
+      background-color: #00b4d8;
+    }
+    .scholarships-container, .colleges-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+    .card {
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+    .card i {
+      font-size: 2em;
+      margin-bottom: 10px;
+      color: #0077b6;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #023e8a;
+      color: white;
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 0.9em;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <header>🎓 Odisha Scholarships & Engineering Colleges Portal</header>
+  
+  <nav>
+    <a href="#scholarships">Scholarships</a>
+    <a href="#colleges">Top Colleges</a>
+    <a href="#about">About</a>
+  </nav>
+
+  <section class="hero">
+    <h1>Explore Scholarships & Colleges in Odisha</h1>
+    <p>Find the best scholarships and engineering colleges with one click.</p>
+  </section>
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search scholarships..." onkeyup="searchScholarships()">
+  </div>
+
+  <!-- Scholarships Section -->
+  <section id="scholarships" class="section">
+    <h2>🎓 Scholarships for Students</h2>
+    <div class="filter-buttons">
+      <button onclick="filterScholarships('all')" class="filter-btn active">All</button>
+      <button onclick="filterScholarships('female')" class="filter-btn">For Girls</button>
+      <button onclick="filterScholarships('boys')" class="filter-btn">For Boys</button>
+      <button onclick="filterScholarships('merit')" class="filter-btn">Merit-Based</button>
+      <button onclick="filterScholarships('govt')" class="filter-btn">Government</button>
+    </div>
+
+    <div class="scholarships-container">
+      <div class="card scholarship-card" data-category="govt female merit">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <h3>Kalinga Sikhya Sathi Yojana</h3>
+        <p>A government initiative providing low-interest loans to Odisha students for higher education.</p>
+        <p><b>Eligibility:</b> Odisha residents pursuing professional/technical courses.</p>
+        <a href="https://dhe.odisha.gov.in" target="_blank">Apply Now</a>
+      </div>
+
+      <div class="card scholarship-card" data-category="female merit govt">
+        <i class="fa-solid fa-female"></i>
+        <h3>Medhabruti Scholarship (Girls)</h3>
+        <p>For meritorious girls pursuing undergraduate and postgraduate courses in Odisha.</p>
+        <p><b>Benefits:</b> ₹10,000 to ₹20,000 per year.</p>
+        <a href="https://scholarship.odisha.gov.in" target="_blank">Apply Now</a>
+      </div>
+
+      <div class="card scholarship-card" data-category="boys merit govt">
+        <i class="fa-solid fa-user-graduate"></i>
+        <h3>Prerana Scholarship</h3>
+        <p>For SC/ST/OBC/SEBC/EBC students studying in recognized institutions of Odisha.</p>
+        <p><b>Eligibility:</b> Annual family income below ₹2.5 lakh.</p>
+        <a href="https://scholarship.odisha.gov.in" target="_blank">Apply Now</a>
+      </div>
+
+      <div class="card scholarship-card" data-category="merit govt">
+        <i class="fa-solid fa-book-open"></i>
+        <h3>National Scholarship Portal (NSP)</h3>
+        <p>Central government scheme offering scholarships to meritorious students across India.</p>
+        <p><b>Note:</b> Includes Post-Matric, Merit-cum-Means, and Top Class scholarships.</p>
+        <a href="https://scholarships.gov.in" target="_blank">Apply Now</a>
+      </div>
+
+      <div class="card scholarship-card" data-category="female merit">
+        <i class="fa-solid fa-star"></i>
+        <h3>Biju Kanya Ratna Scholarship</h3>
+        <p>Encourages higher education among girls in Odisha with financial aid and mentorship.</p>
+        <p><b>Benefit:</b> Up to ₹25,000 per year.</p>
+        <a href="https://wcd.odisha.gov.in" target="_blank">Apply Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Colleges Section -->
+  <section id="colleges" class="section">
+    <h2>🏫 Top Engineering Colleges in Odisha</h2>
+    <div class="colleges-container">
+      <div class="card college-card">
+        <i class="fa-solid fa-building-columns"></i>
+        <h3><a href="https://www.rec.ac.in" target="_blank">Rajdhani Engineering College</a></h3>
+        <p>Affiliated with BPUT, Bhubaneswar. Known for practical training, innovation labs, and strong placement record.</p>
+      </div>
+
+      <div class="card college-card">
+        <i class="fa-solid fa-laptop-code"></i>
+        <h3><a href="https://kiit.ac.in" target="_blank">KIIT University</a></h3>
+        <p>A NAAC ‘A+’ accredited university offering world-class infrastructure, global internships, and 100% placement support.</p>
+      </div>
+
+      <div class="card college-card">
+        <i class="fa-solid fa-university"></i>
+        <h3><a href="https://www.vssut.ac.in" target="_blank">VSSUT Burla</a></h3>
+        <p>Odisha’s premier government engineering university, known for excellence in research, academics, and innovation.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2>ℹ️ About This Portal</h2>
+    <p style="text-align:center;max-width:700px;margin:auto;">
+      This platform helps Odisha students discover scholarships and top engineering colleges with verified details and direct links.  
+      Built for awareness, guidance, and empowerment.
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Odisha Scholarship & College Portal | Built with ❤️ for Students
+  </footer>
+
+  <script>
+function filterScholarships(category) {
+  const cards = document.querySelectorAll('.scholarship-card');
+  const buttons = document.querySelectorAll('.filter-btn');
+  
+  buttons.forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.toLowerCase().includes(category.toLowerCase()) ||
+      (category === 'all' && btn.textContent.toLowerCase().includes('all')));
+  });
+
+  cards.forEach(card => {
+    card.style.display = (category === 'all' || card.dataset.category.includes(category)) ? 'block' : 'none';
+  });
+}
+
+function searchScholarships() {
+  const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+  const cards = document.querySelectorAll('.scholarship-card');
+  
+  cards.forEach(card => {
+    const text = card.textContent.toLowerCase();
+    card.style.display = (!searchTerm || text.includes(searchTerm)) ? 'block' : 'none';
+  });
+}
+
+window.onload = () => {
+  const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.scholarship-card, .college-card').forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(card);
+  });
+};
+  </script>
+</body>
+</html>
